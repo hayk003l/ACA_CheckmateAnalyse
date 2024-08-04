@@ -1,8 +1,8 @@
 
 CC = g++
 
-main: main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o
-	$(CC) -o main main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o
+main: main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o ChessBoard.o
+	$(CC) -o main main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o ChessBoard.o
 
 main.o: main.cpp AllIncludes.hpp 
 	$(CC) -c main.cpp
@@ -31,5 +31,8 @@ Bishop.o: Bishop.cpp Bishop.hpp ChessPiece.hpp
 Knight.o: Knight.cpp Knight.hpp ChessPiece.hpp
 	$(CC) -c Knight.cpp
 
+ChessBoard.o: ChessBoard.cpp ChessBoard.hpp AllIncludes.hpp
+	$(CC) -c ChessBoard.cpp
+
 clean:
-	rm -f main main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o *d.
+	rm -f main main.o ChessPiece.o King.o Queen.o Bishop.o Pawn.o Knight.o Rook.o AllIncludes.o ChessBoard.o  *d.
